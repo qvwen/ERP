@@ -27,13 +27,6 @@
           <i :class="temp.icon"></i>
           {{temp.name}}
         </el-menu-item>
-        <!-- <el-menu-item index="3">订单管理</el-menu-item>
-        -->
-        <!-- <el-submenu index="5" style=" margin-left: 60%;">
-          <template slot="title">设置</template>
-          <el-menu-item index="5-1">锁屏</el-menu-item>
-          <el-menu-item index="5-2">注销</el-menu-item>
-        </el-submenu>-->
         <el-submenu index="4">
           <template slot="title">
             <i class="el-icon-document el-icon-left"></i>我的工作台
@@ -51,12 +44,6 @@
           <el-menu-item index="2-4">
             <i class="el-icon-switch-button"></i>注销
           </el-menu-item>
-          <!-- <el-submenu index="2-4">
-            <template slot="title">选项4</template>
-            <el-menu-item index="2-4-1">选项1</el-menu-item>
-            <el-menu-item index="2-4-2">选项2</el-menu-item>
-            <el-menu-item index="2-4-3">选项3</el-menu-item>
-          </el-submenu>-->
         </el-submenu>
       </el-menu>
     </el-header>
@@ -73,7 +60,6 @@
           @close="handleClose"
           :collapse="isCollapse"
         >
-          <!-- :router="true" -->
           <el-submenu
             width="400"
             v-for="(temp,index) in atpresent"
@@ -87,27 +73,10 @@
             <el-menu-item
               v-for="(temp1,index1) in temp.jurisdiction"
               :index="index+'-'+index1"
-              @click="addTab('b','项目设定')"
+              @click="addTab('dull','stock')"
               v-bind:key="(temp1,index1)"
             >{{temp1.name}}</el-menu-item>
-            <!-- <el-submenu   v-for="(temp1,index1) in temp.jurisdiction" :index="index+'-'+index1" >
-              <span slot="title">
-                <i class="el-icon-document el-icon-left"></i>{{temp1.name}}
-              </span>
-              <el-menu-item index="1-3" @click="addTab('b','项目设定')">
-                <i class="el-icon-setting"></i>项目设定
-              </el-menu-item>
-            </el-submenu>-->
-
-            <!-- <el-submenu index="1-2">
-              <span slot="title">选项4</span>
-              <el-menu-item index="1-2-1">选项1</el-menu-item>
-            </el-submenu>-->
           </el-submenu>
-          <!-- <el-menu-item index="4">
-            <i class="el-icon-setting"></i>
-            <span slot="title">导航四</span>
-          </el-menu-item>-->
         </el-menu>
       </el-aside>
 
